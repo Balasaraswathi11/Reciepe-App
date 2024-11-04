@@ -107,7 +107,7 @@ const RecipeList = () => {
                 
                 {/* Create Recipe Section */}
                 <div className='flex flex-col justify-center items-center bg-white text-black p-5 mt-10'>
-                    <h1 className='md:text-4xl text-3xl my-10 font-pop font-bold'>Create your own recipe</h1>  
+                    <h1 className='md:text-4xl text-2xl my-10 font-pop font-bold'>Create your own recipe</h1>  
                     <button 
                         className="bg-red-500 text-white rounded-md md:px-10 px-5 md:py-5 py-3 mb-10" 
                         onClick={() => navigate("/create")}
