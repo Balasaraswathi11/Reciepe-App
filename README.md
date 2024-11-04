@@ -1,8 +1,16 @@
-# React + Vite
+# Recipe App
+## Description
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Recipe App is a web application that allows users to explore a curated collection of delicious recipes. The app fetches data from a backend server built with Node.js and Express, utilizing MongoDB for data storage. Users can browse various dishes, each featuring detailed ingredients and step-by-step cooking instructions. With a user-friendly interface and seamless data retrieval, this app is perfect for both novice and experienced cooks looking to discover new meals and enhance their culinary skills.
 
-Currently, two official plugins are available:
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Libraries
+- axios
+- react-router-dom
+- react-icons
+- tailwind
+  
