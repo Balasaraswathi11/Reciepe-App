@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import book from "../assets/table3.png"; // Ensure this image path is correct
+import { server } from '../main';
 
 const RecipeDetails = () => {
     const [recipe, setRecipe] = useState(null);
@@ -10,7 +11,7 @@ const RecipeDetails = () => {
 
     const handleupdate = async (id) => {
         try {
-            await axios.put(`http://localhost:5000/api/reci/update/${id}`);
+            await axios.put(`${server}/api/reci/update/${id}`);
             setUpdateStatus("Recipe updated successfully!");
         } catch (error) {
             console.error("Error updating recipe:", error);
@@ -21,7 +22,7 @@ const RecipeDetails = () => {
     useEffect(() => {
         const fetchRecipeById = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/reci/getrecibyid/${id}`);
+                const response = await axios.get(`${server}/api/reci/getrecibyid/${id}`);
                 setRecipe(response.data.recipe);
             } catch (error) {
                 console.error("Error fetching recipe details:", error);
@@ -46,7 +47,7 @@ const RecipeDetails = () => {
         <div className="flex flex-col justify-center items-center text-black shadow-2xl">
             <div className="bg-white border-2 border-gray-300 rounded-lg shadow-lg p-5 m-4 md:w-[900px]">
                 <div className='flex flex-col justify-center items-center'>
-                    <img src={`http://localhost:5000/${recipe.image}`} alt={recipe.title} style={{ width: '400px', borderRadius: '8px' }} />
+                    <img src={`${server}/${recipe.image}`} alt={recipe.title} style={{ width: '400px', borderRadius: '8px' }} />
                 </div>
 
                 <h1 className="text-2xl text-center font-bold mb-4">{recipe.title}</h1>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import backgroundImage from "../assets/cherry.jpg";
 import { useNavigate } from 'react-router-dom';
+import { server } from '../main';
 
 const CreateRecipe = () => {
     const navigate = useNavigate();
@@ -35,7 +36,7 @@ const CreateRecipe = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:5000/api/reci/createreci', form, {
+            const response = await axios.post(`${server}/api/reci/createreci`, form, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 },

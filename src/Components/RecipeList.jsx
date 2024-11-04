@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import ramen from "../assets/ramen.jpg";
-
+import { server } from '../main';
 const RecipeList = () => {
     const [recipe, setRecipe] = useState([]);
     const [category, setCategory] = useState("All");
@@ -19,7 +19,7 @@ const RecipeList = () => {
         const confirmDelete = window.confirm("Are you sure you want to delete this recipe?");
         if (confirmDelete) {
             try {
-                await axios.delete(`http://localhost:5000/api/reci/delete/${id}`);
+                await axios.delete(`${server}/api/reci/delete/${id}`);
                 alert("Recipe deleted successfully!");
             } catch (error) {
                 console.error("Error deleting recipe:", error);
@@ -35,7 +35,7 @@ const RecipeList = () => {
     useEffect(() => {
         const getAllRecipes = async () => {
             try {
-                const fetchRecipes = await axios.get('http://localhost:5000/api/reci/allreci');
+                const fetchRecipes = await axios.get(`${server}/api/reci/allreci`);
                 setRecipe(fetchRecipes.data.message);
                 console.log(fetchRecipes.data.message);
             } catch (error) {
@@ -97,7 +97,7 @@ const RecipeList = () => {
                     <div className='flex flex-row justify-center flex-wrap gap-10 py-10'>
                         {filteredRecipes.map((reci) => (
                             <div className='flex flex-col rounded-lg justify-center items-center px-3 py-2 shadow-xl w-[250px] h-[330px] bg-white' onClick={() => handleclick(reci._id)} key={reci._id}>
-                                <img src={`http://localhost:5000/${reci.image}`} alt={reci.title} style={{ width: '250px', height: "200px" }} />
+                                <img src={`${server}/${reci.image}`} alt={reci.title} style={{ width: '250px', height: "200px" }} />
                                 <h1 className='text-center font-pop text-black text-lg '>{reci.title}</h1>
                                 <p className='text-center font-pop text-sm py-2 text-gray-800'>{reci.cookingTime} mins</p>
                             </div>
