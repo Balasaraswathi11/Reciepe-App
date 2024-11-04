@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* Ensure body takes full height */
+}
+
+body{
+  background-color: rgb(154, 150, 150) ;
+  color: white;
+}
+.imagediv{
+width: 20px;
+height: 20px;
+  
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%); /* Start off-screen to the right */
+  }
+  100% {
+    transform: translateX(0); /* End at original position */
+  }
+}
+
+.slide-left {
+  animation: slide-left 1s ease-in-out forwards; /* Apply the animation */
+}
+.formele{@apply py-10}
+.formele label{
+  @apply mb-2 font-pop
+}
+.formele input{
+  @apply my-2
+}
+.categorydiv{
+  @apply gap-4 mt-4 mb-0  text-zinc-500
+}
