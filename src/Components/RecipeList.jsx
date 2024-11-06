@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import ramen from "../assets/ramen.jpg";
 import { server } from '../main';
+
 const RecipeList = () => {
     const [recipe, setRecipe] = useState([]);
     const [category, setCategory] = useState("All");
@@ -57,7 +58,12 @@ const RecipeList = () => {
 
     return (
         <>
-            {loading && <h3>Loading...</h3>}
+            {loading && (
+                <div className="flex items-center justify-center w-full h-screen absolute top-0 left-0 bg-gray-800 bg-opacity-50 z-50">
+                    <h3 className="text-white text-2xl">Loading...</h3>
+                </div>
+            )}
+
             <div>
                 <div style={{ position: 'relative', zIndex: 2 }}>
                     <div className='flex justify-center items-center mx-10 my-5'>
