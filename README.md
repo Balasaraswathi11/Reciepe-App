@@ -21,5 +21,5 @@ Welcome to the Recipe App! This Recipe App is a web application that allows user
 - **Responsive Design**: The app is fully responsive, ensuring a great experience across devices.
 
 
-  [Backend](https://github.com/Balasaraswathi11/Reciepe-BE.git)
-  [Netlify](https://recipeapp-fe.netlify.app)
+ ### [Backend](https://github.com/Balasaraswathi11/Reciepe-BE.git)
+ ### [Netlify](https://recipeapp-fe.netlify.app)
